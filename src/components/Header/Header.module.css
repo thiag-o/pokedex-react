@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  min-height: 7.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--c1);
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.buttonPrimary {
+  padding: 0.4rem 0.8rem;
+  background: var(--r0);
+  color: black;
+  font: var(--link);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+}
+
+.buttonSecundary {
+  padding: 0.4rem 0.8rem;
+  background: var(--c1);
+  color: black;
+  font: var(--link);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+}

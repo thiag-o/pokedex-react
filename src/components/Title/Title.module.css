@@ -1,0 +1,35 @@
+.t1 {
+  font: var(--title);
+  color: var(--c9);
+  margin-bottom: 0.75rem;
+}
+
+
+.detail {
+  position: relative;
+  flex: 1;
+}
+
+.svg {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  height: 3.3rem;
+}
+
+.sectionTitle {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--c4) 5%, white 5%, white 80%, var(--c4) 80%);
+  ;
+}
