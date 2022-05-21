@@ -11,7 +11,7 @@ const Home = () => {
   React.useEffect(() => {
     (async () => {
       const response = await axios.get<Array<object> | null | any>(
-        'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0',
+        'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
       );
       setData(response.data.results);
     })();
