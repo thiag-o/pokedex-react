@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from '../Card/Card';
 import styles from './List.module.css';
+import { PokemonSimple } from '../../pokeapi/interfacePokemons';
 
 interface Props {
-  infos: [{ name: string; url: string }] | null;
+  infos: Array<PokemonSimple> | null;
 }
 
 const List = ({ infos }: Props) => {
