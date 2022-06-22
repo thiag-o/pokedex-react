@@ -8,8 +8,16 @@ interface Props {
   name: string;
 }
 
+interface Types {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+}
+
 const Card = ({ url, name }: Props) => {
-  const [types, setTypes] = React.useState<Array<object> | any>(null);
+  const [types, setTypes] = React.useState<Array<Types> | null>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
   const arrayUrl = url.split('/');
   const numberurl = arrayUrl[arrayUrl.length - 2];
@@ -22,6 +30,7 @@ const Card = ({ url, name }: Props) => {
       const response = (await axios.get(url)).data.types;
       setTypes(response);
       setLoading(false);
+      console.log(Array.isArray(response));
     })();
   }, []);
   // console.log(types[0]);

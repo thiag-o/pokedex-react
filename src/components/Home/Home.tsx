@@ -4,14 +4,15 @@ import styles from './Home.module.css';
 import search from '../../assets/search.svg';
 import List from '../List/List';
 import axios from 'axios';
+import { PokemonSimple } from '../../pokeapi/interfacePokemons';
 
 const Home = () => {
-  const [data, setData] = React.useState<Array<object> | null | any>(null);
+  const [data, setData] = React.useState<Array<PokemonSimple> | null>(null);
 
   React.useEffect(() => {
     (async () => {
-      const response = await axios.get<Array<object> | null | any>(
-        'https://pokeapi.co/api/v2/pokemon?limit=800&offset=0',
+      const response = await axios.get(
+        'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
       );
       setData(response.data.results);
     })();
