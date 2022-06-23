@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 import styles from './List.module.css';
-import { PokemonSimple } from '../../pokeapi/interfacePokemons';
+import { PokemonSimple } from '../../pokeutils/interfacePokemons';
 import axios from 'axios';
 
 interface Props {
@@ -16,7 +16,11 @@ const List = ({ result }: Props) => {
 
   React.useEffect(() => {
     if (result != '') {
-      setFind(infos?.filter((info) => info.name === result.toLowerCase()));
+      if (!isNaN(+result)) {
+        setFind(infos?.filter((info, index) => index + 1 == +result));
+      } else {
+        setFind(infos?.filter((info) => info.name === result.toLowerCase()));
+      }
     } else {
       setFind(null);
     }
@@ -28,6 +32,7 @@ const List = ({ result }: Props) => {
         'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
       );
       setInfos(response.data.results);
+      console.log(response);
     })();
   }, []);
 

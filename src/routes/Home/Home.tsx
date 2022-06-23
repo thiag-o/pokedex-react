@@ -13,7 +13,7 @@ const Home = () => {
   }
 
   return (
-    <main className={`${styles.home} size-full`}>
+    <section className={styles.home}>
       <Title text="Home" img={true} />
       <form className={styles.search} onSubmit={handleSubmit}>
         <input
@@ -26,7 +26,7 @@ const Home = () => {
         </button>
       </form>
       <List result={result} />
-    </main>
+    </section>
   );
 };
 

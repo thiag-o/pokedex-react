@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Card.module.css';
 import axios from 'axios';
-import { images, colors } from './importTypes';
+import { images, colors } from '../../pokeutils/importTypes';
 import Loading from '../Helper/Loading/Loading';
 import { Link } from 'react-router-dom';
 

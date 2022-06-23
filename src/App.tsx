@@ -10,10 +10,12 @@ const App = () => {
     <div className="container-all ">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pokemon/:num" element={<Pokemon />} />
-        </Routes>
+        <main className="size-full">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pokemon/:num" element={<Pokemon />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </div>
