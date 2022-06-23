@@ -4,15 +4,18 @@ import pikachu from '../../assets/pikachu.svg';
 
 interface props {
   text: string;
+  img?: boolean;
 }
 
-const Title = ({ text }: props) => {
+const Title = ({ text, img }: props) => {
   return (
-    <section className={styles.sectionTitle}>
+    <section className={img ? styles.sectionTitle : styles.sectionTitleMin}>
       <h1 className={styles.t1}>{text}</h1>
-      <div className={styles.detail}>
-        <img src={pikachu} className={styles.svg} />
-      </div>
+      {img && (
+        <div className={styles.detail}>
+          <img src={pikachu} className={styles.svg} />
+        </div>
+      )}
     </section>
   );
 };

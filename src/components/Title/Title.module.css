@@ -2,6 +2,7 @@
   font: var(--title);
   color: var(--c9);
   margin-bottom: 0.75rem;
+  text-transform: capitalize;
 }
 
 
@@ -22,6 +23,23 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+
+.sectionTitleMin {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+.sectionTitleMin::after {
+  content: '';
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  height: 0.25rem;
+  background: var(--c4);
 }
 
 .sectionTitle::after {

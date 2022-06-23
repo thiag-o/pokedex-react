@@ -3,6 +3,7 @@ import styles from './Card.module.css';
 import axios from 'axios';
 import { images, colors } from './importTypes';
 import Loading from '../Helper/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 interface Props {
   url: string;
@@ -24,6 +25,8 @@ const Card = ({ url, name }: Props) => {
   const numberurl = arrayUrl[arrayUrl.length - 2];
   const id = numberurl.padStart(3, '0');
 
+  function handleLoadingImgs() {}
+
   useEffect(() => {
     setLoading(true);
     (async () => {
@@ -39,7 +42,7 @@ const Card = ({ url, name }: Props) => {
   }
   if (types !== null) {
     return (
-      <div className={styles.card}>
+      <Link to={`/pokemon/${numberurl}`} className={styles.card}>
         <div
           style={{ backgroundColor: colors[types[0].type.name] }}
           className={styles.cardHeader}
@@ -49,8 +52,8 @@ const Card = ({ url, name }: Props) => {
 
         <div className={styles.image}>
           <img
+            onLoad={handleLoadingImgs}
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`}
-            alt=""
           />
         </div>
         <div className={styles.cardFooter}>
@@ -67,7 +70,7 @@ const Card = ({ url, name }: Props) => {
             ))}
           </ul>
         </div>
-      </div>
+      </Link>
     );
   } else {
     return null;

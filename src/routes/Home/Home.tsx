@@ -1,11 +1,8 @@
-import React, { FormEventHandler } from 'react';
-import Title from '../Title/Title';
+import React from 'react';
+import Title from '../../components/Title/Title';
 import styles from './Home.module.css';
 import search from '../../assets/search.svg';
-import List from '../List/List';
-import axios from 'axios';
-import { PokemonSimple } from '../../pokeapi/interfacePokemons';
-import UseForm from '../../hooks/UseForm';
+import List from '../../components/List/List';
 
 const Home = () => {
   const [find, setFind] = React.useState<string>('');
@@ -16,8 +13,8 @@ const Home = () => {
   }
 
   return (
-    <>
-      <Title text="Home" />
+    <main className={`${styles.home} size-full`}>
+      <Title text="Home" img={true} />
       <form className={styles.search} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -29,7 +26,7 @@ const Home = () => {
         </button>
       </form>
       <List result={result} />
-    </>
+    </main>
   );
 };
 

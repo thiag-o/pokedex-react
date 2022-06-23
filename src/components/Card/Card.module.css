@@ -49,6 +49,7 @@
   gap: 4px;
   font: var(--card-type);
   text-transform: uppercase;
+  color: black;
 }
 
 
