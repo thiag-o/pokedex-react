@@ -1,0 +1,27 @@
+.loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading span {
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-radius: 50%;
+  border: solid 6px;
+  border-color: red red red transparent;
+  animation: linear-spiner 0.7s infinite;
+}
+
+@keyframes linear-spiner {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: initial;
+  }
+}

@@ -4,6 +4,11 @@
   gap: 2rem;
 }
 
+.notFind {
+  text-align: center;
+  font: var(--card-title)
+}
+
 @media (max-width: 1000px) {
   .list {
     grid-template-columns: 1fr 1fr 1fr;

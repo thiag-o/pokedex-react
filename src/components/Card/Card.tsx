@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './Card.module.css';
 import axios from 'axios';
 import { images, colors } from './importTypes';
+import Loading from '../Helper/Loading/Loading';
 
 interface Props {
   url: string;
@@ -30,14 +31,13 @@ const Card = ({ url, name }: Props) => {
       const response = (await axios.get(url)).data.types;
       setTypes(response);
       setLoading(false);
-      console.log(Array.isArray(response));
     })();
   }, []);
-  // console.log(types[0]);
 
   if (loading === true) {
-    return <p>Carregando...</p>;
-  } else if (types !== null) {
+    return <Loading />;
+  }
+  if (types !== null) {
     return (
       <div className={styles.card}>
         <div
@@ -70,7 +70,7 @@ const Card = ({ url, name }: Props) => {
       </div>
     );
   } else {
-    return <p>Errooooo</p>;
+    return null;
   }
 };
 

@@ -2,20 +2,59 @@ import React from 'react';
 import Card from '../Card/Card';
 import styles from './List.module.css';
 import { PokemonSimple } from '../../pokeapi/interfacePokemons';
+import axios from 'axios';
 
 interface Props {
-  infos: Array<PokemonSimple> | null;
+  result: string;
 }
 
-const List = ({ infos }: Props) => {
-  React.useEffect(() => {});
-  return (
-    <div className={styles.list}>
-      {infos?.map(({ name, url }) => (
-        <Card key={url} name={name} url={url} />
-      ))}
-    </div>
-  );
+const List = ({ result }: Props) => {
+  const [infos, setInfos] = React.useState<Array<PokemonSimple> | null>(null);
+  const [find, setFind] = React.useState<
+    Array<PokemonSimple> | null | undefined
+  >(null);
+
+  React.useEffect(() => {
+    if (result != '') {
+      setFind(infos?.filter((info) => info.name === result.toLowerCase()));
+    } else {
+      setFind(null);
+    }
+  }, [result]);
+
+  React.useEffect(() => {
+    (async () => {
+      const response = await axios.get(
+        'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
+      );
+      setInfos(response.data.results);
+    })();
+  }, []);
+
+  if (find?.length === 0)
+    return <p className={styles.notFind}>Nenhum pokemon encontrado.</p>;
+
+  if (find) {
+    return (
+      <div className={styles.list}>
+        {find?.map(({ name, url }) => (
+          <Card key={url} name={name} url={url} />
+        ))}
+      </div>
+    );
+  }
+
+  if (infos) {
+    return (
+      <div className={styles.list}>
+        {infos?.map(({ name, url }) => (
+          <Card key={url} name={name} url={url} />
+        ))}
+      </div>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default List;
