@@ -20,6 +20,8 @@
   --footer: 300 1rem/1 'IBM Plex Sans', sans-serif;
   --type: 400 1.6rem/1.2 'IBM Plex Sans', sans-serif;
 
+  /* shadow */
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 }
 

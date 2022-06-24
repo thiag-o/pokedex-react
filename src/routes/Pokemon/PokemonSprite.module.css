@@ -3,8 +3,9 @@
   margin-top: 4.5rem;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .galery>img {

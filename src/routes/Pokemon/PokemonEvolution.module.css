@@ -1,0 +1,8 @@
+.evolution {
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.evolution h2 {
+  font: var(--card-title)
+}
