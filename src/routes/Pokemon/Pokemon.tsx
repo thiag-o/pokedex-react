@@ -23,10 +23,7 @@ const Pokemon = () => {
     return (
       <section>
         <Title text={data.name} />
-        <div
-          className={styles.galery}
-          // style={{ backgroundColor: colors[data.types[0].type.name] + '33' }}
-        >
+        <div className={styles.galery}>
           <img
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`}
             alt={data.name}
@@ -39,14 +36,16 @@ const Pokemon = () => {
             <img src={data.sprites.front_shiny} />
             <img src={data.sprites.back_shiny} />
           </div>
-          {data?.types.map((types: any) => (
-            <div key={types.type.url} className={styles.type}>
-              <h3>
-                <img src={images[types.type.name]} />
-                {types.type.name}
-              </h3>
-            </div>
-          ))}
+          <div className={styles.type}>
+            {data?.types.map((types: any) => (
+              <div key={types.type.url}>
+                <h3>
+                  <img src={images[types.type.name]} />
+                  {types.type.name}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
