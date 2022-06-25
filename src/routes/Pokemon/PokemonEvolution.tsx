@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import Card from '../../components/Card/Card';
+import { colors } from '../../pokeutils/importTypes';
 import styles from './PokemonEvolution.module.css';
 
 interface Props {
@@ -62,12 +63,23 @@ const PokemonEvolution = ({ url, data, num }: Props) => {
   }, []);
 
   return (
-    <div className={styles.evolution}>
+    <section className={styles.evolution}>
       <h2>Evolutions</h2>
-      {evolution?.map((info) => (
-        <Card url={url} key={info.id} name={info.name} num={info.id} />
-      ))}
-    </div>
+      <div>
+        {evolution?.map((info) => (
+          <div key={info.id} className={styles.specie}>
+            <div>
+              <Card url={url} name={info.name} num={info.id} />
+            </div>
+            <span
+            //  style={{ color: colors[data.types[0].type.name] }}
+            >
+              {'>'}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

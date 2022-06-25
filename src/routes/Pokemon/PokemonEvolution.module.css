@@ -4,5 +4,70 @@
 }
 
 .evolution h2 {
-  font: var(--card-title)
+  font: var(--evolution);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+.evolution>div {
+  display: flex;
+  justify-content: center;
+  /* gap: inherit; */
+
+}
+
+.specie {
+  display: flex;
+  align-items: center;
+}
+
+.specie>div {
+  box-shadow: var(--shadow);
+}
+
+.specie span {
+  font: 300 2rem/1 'IBM Plex Sans', sans-serif;
+  margin: 0 2rem;
+}
+
+.specie:last-child span {
+  display: none;
+}
+
+@media (max-width: 800px) {
+
+
+
+  .specie span {
+    font: 300 1.4rem/1 'IBM Plex Sans', sans-serif;
+    margin: 0rem 1rem;
+  }
+
+  .specie img {
+    max-height: 120px;
+  }
+
+}
+
+@media (max-width:600px) {
+  .evolution>div {
+    flex-direction: column;
+  }
+
+  .specie {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .specie span {
+    font: 300 1.4rem/1 'IBM Plex Sans', sans-serif;
+    margin: 1rem 0rem;
+    transform: rotate(90deg);
+  }
+
+  .specie img {
+    max-height: 150px;
+  }
 }

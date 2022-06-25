@@ -41,12 +41,12 @@
   justify-content: center;
   gap: 0.7rem;
   text-transform: capitalize;
-  font: var(--type);
+  font: var(--pokemon-type);
   color: var(--c10);
 }
 
 .type img {
-  height: calc(1.6rem * 1.2);
+  height: calc(1.3rem * 1.2);
 }
 
 @media (max-width: 800px) {

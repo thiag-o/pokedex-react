@@ -1,5 +1,5 @@
 .card {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow) !important;
   min-height: 17.5rem;
 }
 

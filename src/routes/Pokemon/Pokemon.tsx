@@ -13,6 +13,7 @@ const Pokemon = () => {
 
   React.useEffect(() => {
     (async () => {
+      scroll(0, 0);
       setLoading(true);
       const response = (await axios.get(url)).data;
       setLoading(false);
