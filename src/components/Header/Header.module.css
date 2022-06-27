@@ -15,6 +15,37 @@
   gap: 2rem;
 }
 
+.menuMobile {
+  display: block;
+  position: absolute;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .1);
+  right: 0px;
+  top: 90px;
+  width: 200px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  z-index: 1;
+}
+
+.menuMobile.active {
+  transition: 0.3s;
+  opacity: 1;
+  transform: initial;
+  pointer-events: initial;
+}
+
+.menuMobile a {
+  display: block;
+  background: transparent;
+  /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); */
+  border-bottom: 1px solid red;
+  padding: .6rem 0;
+  padding-left: 1rem;
+}
+
+
 .buttonPrimary {
   padding: 0.4rem 0.8rem;
   background: var(--r0);
@@ -29,4 +60,26 @@
   color: black;
   font: var(--link);
   box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+}
+
+.buttonMenu {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonMenu img {
+  height: 40px;
+  transition: .3s;
+  transform: rotate(0deg);
+}
+
+.buttonMenu.active img {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+  .menu ul {
+    justify-self: end;
+  }
 }

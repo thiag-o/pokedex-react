@@ -22,9 +22,6 @@
   align-items: center;
 }
 
-.specie>div {
-  box-shadow: var(--shadow);
-}
 
 .specie span {
   font: 300 2rem/1 'IBM Plex Sans', sans-serif;

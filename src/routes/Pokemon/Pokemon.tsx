@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Title from '../../components/Title/Title';
 import PokemonEvolution from './PokemonEvolution';
 import PokemonSprite from './PokemonSprite';
+import styles from './Pokemon.module.css';
 
 const Pokemon = () => {
   const { num } = useParams();
@@ -26,7 +27,7 @@ const Pokemon = () => {
   }
   if (data) {
     return (
-      <section>
+      <section className={styles.pokemon}>
         <Title text={data.name} />
         <PokemonSprite data={data} num={num} />
         <PokemonEvolution url={url} data={data} num={num} />

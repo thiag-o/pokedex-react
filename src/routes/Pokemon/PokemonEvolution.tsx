@@ -68,9 +68,8 @@ const PokemonEvolution = ({ url, data, num }: Props) => {
       <div>
         {evolution?.map((info) => (
           <div key={info.id} className={styles.specie}>
-            <div>
-              <Card url={url} name={info.name} num={info.id} />
-            </div>
+            <Card url={url} name={info.name} num={info.id} />
+
             <span
             //  style={{ color: colors[data.types[0].type.name] }}
             >

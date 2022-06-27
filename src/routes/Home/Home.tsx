@@ -18,7 +18,7 @@ const Home = () => {
       <form className={styles.search} onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Procure seu pokemon aqui..."
+          placeholder="Procure pelo nome ou pelo numero."
           onChange={({ target }) => setFind(target.value)}
         />
         <button className={styles.buttonForm} type="submit">

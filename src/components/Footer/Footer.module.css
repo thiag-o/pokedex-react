@@ -7,3 +7,13 @@
 .footer p {
   text-align: center;
 }
+
+.footer a {
+  color: #4D4D4D;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
