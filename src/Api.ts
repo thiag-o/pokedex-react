@@ -5,9 +5,6 @@ console.log(API)
 
 const urlSincro = axios.create({
   baseURL: API,
-  headers: {
-    'Content-Type': 'application/json'
-  }
 })
 
 function setToken(token: string) {
@@ -65,7 +62,7 @@ export async function GET_ALL_POKEMONS() {
 
 export async function POST_USER_ADD_POKEMONS(token: string, id: string) {
   const config = setToken(token)
-  const response = await urlSincro.post(`/user/favPokemon/${id}`, '', config)
+  const response = await urlSincro.post(`/user/favPokemon/${id}`, {}, config)
   return response
 }
 
