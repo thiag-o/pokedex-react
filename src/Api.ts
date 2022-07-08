@@ -1,8 +1,13 @@
 import axios from "axios";
+
 const API = import.meta.env.BASE_URL
+
 
 const urlSincro = axios.create({
   baseURL: API,
+  headers: {
+    'Content-Type': 'application/json'
+  }
 })
 
 function setToken(token: string) {
