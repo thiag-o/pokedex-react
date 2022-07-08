@@ -1,8 +1,6 @@
 import axios from "axios";
-let API = "http://localhost:3333"
-if (process.env.BASE_URL) {
-  API = process.env.BASE_URL
-}
+const API = import.meta.env.BASE_URL
+
 const urlSincro = axios.create({
   baseURL: API,
 })
