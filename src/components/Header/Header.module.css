@@ -78,6 +78,17 @@
   transform: rotate(90deg);
 }
 
+.link {
+  padding: 10px 20px;
+  font: var(--link);
+  color: var(--c8);
+}
+
+.link:hover {
+  transition: .2s;
+  color: black;
+}
+
 @media (max-width: 600px) {
   .menu ul {
     justify-self: end;

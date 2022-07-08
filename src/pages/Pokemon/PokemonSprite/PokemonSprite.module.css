@@ -1,11 +1,40 @@
 .galery {
   display: grid;
-  margin-top: 4.5rem;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
   box-shadow: var(--shadow);
   padding: 2rem;
   margin-bottom: 2rem;
+}
+
+.add {
+  position: absolute;
+  background: #04ff00;
+  right: 0;
+  display: block;
+  border: none;
+  font: var(--link);
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.add:hover {
+  background: greenyellow;
+}
+
+.remove {
+  position: absolute;
+  background: #FDB5A3;
+  left: 0;
+  display: block;
+  border: none;
+  font: var(--link);
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.remove:hover {
+  background: red;
 }
 
 .galery>img {

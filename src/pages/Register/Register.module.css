@@ -1,0 +1,32 @@
+.boxForm {
+  border: 2px solid #FDB5A3;
+  padding: 32px 40px;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 0 2px 2px #FAD3C9;
+}
+
+.button {
+  font: 400 1.5rem/1 'IBM Plex Sans', sans-serif;
+  padding: 12px 24px;
+  border: none;
+  background: linear-gradient(90deg, #FDB3A3 0%, #FDC4A3 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.buttonGroup .detail {
+  opacity: 0.1;
+  height: 40px;
+}

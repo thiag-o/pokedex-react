@@ -1,0 +1,20 @@
+.button {
+  font: var(--link);
+  color: var(--c8);
+  padding: 10px 20px;
+  background: #FDB5A3;
+  color: black;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transition: .2s;
+  background: #fc5e37;
+}
+.buttonGroup{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

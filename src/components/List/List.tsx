@@ -2,19 +2,19 @@ import React from 'react';
 import Card from '../Card/Card';
 import styles from './List.module.css';
 import { PokemonSimple } from '../../pokeutils/interfacePokemons';
-import axios from 'axios';
 
 interface Props {
   result: string;
+  infos: Array<PokemonSimple> | null | undefined;
 }
 
-const List = ({ result }: Props) => {
-  const [infos, setInfos] = React.useState<Array<PokemonSimple> | null>(null);
+const List = ({ result, infos }: Props) => {
   const [find, setFind] = React.useState<
     Array<PokemonSimple> | null | undefined
   >(null);
 
   React.useEffect(() => {
+    if (result[result.length - 1] === ' ') result = result.trimEnd();
     if (result != '') {
       if (!isNaN(+result)) {
         setFind(infos?.filter((info, index) => index + 1 == +result));
@@ -25,15 +25,6 @@ const List = ({ result }: Props) => {
       setFind(null);
     }
   }, [result]);
-
-  React.useEffect(() => {
-    (async () => {
-      const response = await axios.get(
-        'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
-      );
-      setInfos(response.data.results);
-    })();
-  }, []);
 
   if (find?.length === 0)
     return <p className={styles.notFind}>Nenhum pokemon encontrado.</p>;

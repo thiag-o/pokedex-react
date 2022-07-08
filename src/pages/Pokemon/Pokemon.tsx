@@ -2,8 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Title from '../../components/Title/Title';
-import PokemonEvolution from './PokemonEvolution';
-import PokemonSprite from './PokemonSprite';
+import PokemonEvolution from './PokemonEvolution/PokemonEvolution';
+import PokemonSprite from './PokemonSprite/PokemonSprite';
 import styles from './Pokemon.module.css';
 
 const Pokemon = () => {
@@ -28,7 +28,7 @@ const Pokemon = () => {
   if (data) {
     return (
       <section className={styles.pokemon}>
-        <Title text={data.name} />
+        <Title text={data.name} back={true} />
         <PokemonSprite data={data} num={num} />
         <PokemonEvolution url={url} data={data} num={num} />
       </section>

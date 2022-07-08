@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import Card from '../../components/Card/Card';
-import { colors } from '../../pokeutils/importTypes';
+import Card from '../../../components/Card/Card';
+// import { colors } from '../../../pokeutils/importTypes';
 import styles from './PokemonEvolution.module.css';
 
 interface Props {

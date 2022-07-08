@@ -23,6 +23,8 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin-bottom: 4.5rem;
+
 }
 
 .sectionTitleMin {
@@ -30,6 +32,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin-bottom: 4.5rem;
 }
 
 
@@ -50,4 +53,17 @@
   height: 0.25rem;
   background: linear-gradient(90deg, var(--c4) 5%, white 5%, white 80%, var(--c4) 80%);
   ;
+}
+
+.button {
+  display: inline-block;
+  font: inherit;
+  color: #FDB5A3;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #fc5e37;
 }
