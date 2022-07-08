@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API = import.meta.env.BASE_URL
-
+const API = import.meta.env.VITE_API_TESTE
+console.log(API)
 
 const urlSincro = axios.create({
   baseURL: API,
@@ -27,7 +27,7 @@ export async function REGISTER_POST(body: {
   name: string
 }) {
 
-  const response = await urlSincro.post('/register', body)
+  const response = await urlSincro.post('/register', body,)
   return response
 }
 
