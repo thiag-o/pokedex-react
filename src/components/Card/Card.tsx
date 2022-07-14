@@ -4,7 +4,7 @@ import axios from 'axios';
 import { images, colors } from '../../pokeutils/importTypes';
 import Loading from '../Helper/Loading/LoadingCard';
 import { Link } from 'react-router-dom';
-
+import Image from '../Helper/Image/Image';
 interface Props {
   url: string;
   name: string;
@@ -43,7 +43,7 @@ const Card = ({ url, name, num }: Props) => {
   }, []);
 
   if (loading === true) {
-    return <Loading />;
+    return <Loading otherClass={styles.loading} />;
   }
   if (types !== null) {
     return (
@@ -56,8 +56,9 @@ const Card = ({ url, name, num }: Props) => {
         </div>
 
         <div className={styles.image}>
-          <img
+          <Image
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`}
+            alt={`pokemon${id}`}
           />
         </div>
         <div className={styles.cardFooter}>
@@ -66,7 +67,7 @@ const Card = ({ url, name, num }: Props) => {
               <li className={styles.type} key={type.name}>
                 {type.name && (
                   <>
-                    <img src={images[type.name]} alt="" />
+                    <Image src={images[type.name]} alt="aa" />
                     <p>{type.name}</p>
                   </>
                 )}

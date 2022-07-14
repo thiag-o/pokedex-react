@@ -4,6 +4,7 @@ import { images } from '../../../pokeutils/importTypes';
 import { DELETE_USER_POKEMONS, POST_USER_ADD_POKEMONS } from '../../../Api';
 import { UserContext } from '../../../useContext';
 import { useNavigate } from 'react-router-dom';
+import Image from '../../../components/Helper/Image/Image';
 
 interface Props {
   data: any;
@@ -12,13 +13,17 @@ interface Props {
 
 const Pokemon = ({ data, num }: Props) => {
   const id = num?.padStart(3, '0');
-  const { isLogin, getPokemonsUser } = React.useContext(UserContext);
+  const { getPokemonsUser, getUserForLogin } = React.useContext(UserContext);
   const [isAdd, setIsAdd] = React.useState<boolean | null>(null);
+  const [wasClick, setWasClick] = React.useState<boolean>(false);
+  const token = localStorage.getItem('token');
 
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    (async () => {
+    async function loadingLogin() {
+      const isLogin = await getUserForLogin(token);
+      console.log(isLogin);
       if (isLogin) {
         let isPokemon = false;
         const pokemonsUser = await getPokemonsUser();
@@ -27,25 +32,25 @@ const Pokemon = ({ data, num }: Props) => {
         }
         setIsAdd(isPokemon);
       }
-    })();
+    }
+
+    loadingLogin();
   }, []);
 
   async function handleAdd() {
-    if (isLogin) {
-      const token = localStorage.getItem('token');
-      if (token && num) {
-        const response = await POST_USER_ADD_POKEMONS(token, num);
-        navigate('/conta');
-      }
+    setWasClick(false);
+    if (token && num) {
+      setWasClick(true);
+      const response = await POST_USER_ADD_POKEMONS(token, num);
+      navigate('/conta');
     }
   }
   async function handleRemove() {
-    if (isLogin) {
-      const token = localStorage.getItem('token');
-      if (token && num) {
-        const response = await DELETE_USER_POKEMONS(token, num);
-        navigate('/conta');
-      }
+    setWasClick(false);
+    if (token && num) {
+      setWasClick(true);
+      const response = await DELETE_USER_POKEMONS(token, num);
+      navigate('/conta');
     }
   }
 
@@ -53,19 +58,24 @@ const Pokemon = ({ data, num }: Props) => {
     return (
       <>
         {isAdd === true ? (
-          <button onClick={handleRemove} className={styles.remove}>
+          <button
+            onClick={handleRemove}
+            disabled={wasClick}
+            className={styles.remove}
+          >
             Remover Pokemon
           </button>
         ) : isAdd === false ? (
-          <button onClick={handleAdd} className={styles.add}>
+          <button
+            onClick={handleAdd}
+            disabled={wasClick}
+            className={styles.add}
+          >
             Adicionar Pokemon
           </button>
         ) : (
           <></>
         )}
-        {/* <button onClick={handleAdd} className={styles.add}>
-          Adicionar Pokemon
-        </button> */}
         <div className={styles.galery}>
           <img
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`}

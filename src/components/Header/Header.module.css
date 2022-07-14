@@ -54,12 +54,22 @@
   box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 }
 
+
+.buttonPrimary:hover {
+  background: var(--r0h);
+}
+
+
 .buttonSecundary {
   padding: 0.4rem 0.8rem;
   background: var(--c1);
   color: black;
   font: var(--link);
   box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+}
+
+.buttonSecundary:hover {
+  background: var(--c1h);
 }
 
 .buttonMenu {
@@ -92,5 +102,13 @@
 @media (max-width: 600px) {
   .menu ul {
     justify-self: end;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .buttonPrimary:hover,
+  .buttonSecundary:hover {
+    background: #FFD6D6;
   }
 }

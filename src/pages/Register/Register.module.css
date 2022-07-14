@@ -15,18 +15,49 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background: #FB6B4B;
+}
+
 .button:disabled {
   opacity: 0.6;
+  background: #FB6B4B;
 }
 
 .buttonGroup {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .buttonGroup .detail {
   opacity: 0.1;
   height: 40px;
+}
+
+@media (max-width:600px) {
+  .buttonGroup .detail {
+    display: none;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+  }
+
+}
+
+@media (max-width:400px) {
+  .button {
+    width: 100%;
+    font-size: 1rem;
+  }
 }

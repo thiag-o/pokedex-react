@@ -8,8 +8,8 @@
 }
 
 .add {
-  position: absolute;
-  background: #04ff00;
+  /* position: absolute; */
+  background: #87e000;
   right: 0;
   display: block;
   border: none;
@@ -23,8 +23,8 @@
 }
 
 .remove {
-  position: absolute;
-  background: #FDB5A3;
+  /* position: absolute; */
+  background: #FF7C7C;
   left: 0;
   display: block;
   border: none;
@@ -34,7 +34,7 @@
 }
 
 .remove:hover {
-  background: red;
+  background: #ff3333;
 }
 
 .galery>img {
@@ -109,5 +109,13 @@
 
   .type h3 {
     gap: 0.5rem;
+  }
+
+  .add {
+    width: 100%;
+  }
+
+  .remove {
+    width: 100%;
   }
 }

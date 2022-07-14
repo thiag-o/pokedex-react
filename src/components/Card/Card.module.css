@@ -3,6 +3,10 @@
   min-height: 17.5rem;
 }
 
+.loading {
+  min-height: 17.5rem;
+}
+
 .card:hover {
   transform: scale(1.05);
   transition: 0.2s;

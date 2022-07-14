@@ -13,8 +13,9 @@
   transition: .2s;
   background: #fc5e37;
 }
-.buttonGroup{
+
+.buttonGroup {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }

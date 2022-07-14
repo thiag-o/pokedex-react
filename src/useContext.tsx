@@ -17,11 +17,27 @@ export const UserStorage = ({ children }: Props) => {
 
   const navigate = useNavigate();
 
+  async function getUserForLogin(token: string) {
+    try {
+      const response = await GET_USER(token);
+      if (response.status === 200) {
+        return true;
+      }
+      if (response.status === 204) {
+        return false;
+      }
+    } catch (err) {
+      setError(true);
+      return false;
+    }
+  }
+
   async function getUser(token: string) {
     setError(false);
     setLoading(true);
     try {
       const response = await GET_USER(token);
+      // console.log(response);
       if (response.status === 200) {
         setIsLogin(true);
         setData(response.data.user);
@@ -145,6 +161,7 @@ export const UserStorage = ({ children }: Props) => {
         logout,
         getPokemonsUser,
         pokemonsFav,
+        getUserForLogin,
       }}
     >
       {children}

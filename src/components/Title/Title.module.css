@@ -52,7 +52,7 @@
   bottom: 0;
   height: 0.25rem;
   background: linear-gradient(90deg, var(--c4) 5%, white 5%, white 80%, var(--c4) 80%);
-  ;
+
 }
 
 .button {
@@ -66,4 +66,35 @@
 
 .button:hover {
   color: #fc5e37;
+}
+
+@media (max-width: 400px) {
+  .svg {
+    display: none;
+  }
+
+  .sectionTitle::after {
+    content: '';
+    width: 5%;
+    position: absolute;
+    bottom: 0;
+    height: 0.25rem;
+    background: var(--c4);
+
+  }
+
+  .sectionTitleMin::after {
+    display: none;
+  }
+
+  .sectionTitleMin {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .sectionTitle {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+  }
 }
