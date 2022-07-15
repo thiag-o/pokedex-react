@@ -6,6 +6,7 @@ import useForm from '../../hooks/useForm';
 import { UserContext } from '../../useContext';
 import styles from '../Register/Register.module.css';
 import pokeball from '../../assets/pokeball.svg';
+import Error from '../../components/Helper/Error/Error';
 
 const Login = () => {
   const { isLogin, error, login, loading } = React.useContext(UserContext);
@@ -44,7 +45,7 @@ const Login = () => {
             <img className={styles.detail} src={pokeball} alt="pokeball" />
           </div>
         </form>
-        {error && <p>Falha ao registrar</p>}
+        {error && <Error error={error} />}
       </div>
     </>
   );

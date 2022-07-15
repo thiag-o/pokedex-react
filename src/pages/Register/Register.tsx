@@ -7,6 +7,7 @@ import useForm from '../../hooks/useForm';
 import { REGISTER_POST } from '../../Api';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../useContext';
+import Error from '../../components/Helper/Error/Error';
 
 const Register = () => {
   const user = useForm();
@@ -15,7 +16,10 @@ const Register = () => {
   const name = useForm();
 
   // const navigate = useNavigate();
-  const { register, error, loading } = React.useContext(UserContext);
+  const { register, setError, error, loading } = React.useContext(UserContext);
+  React.useEffect(() => {
+    setError(null);
+  }, []);
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -51,7 +55,7 @@ const Register = () => {
             <img className={styles.detail} src={pokeball} alt="pokeball" />
           </div>
         </form>
-        {error && <p>Falha ao registrar</p>}
+        {error && <Error error={error} />}
       </div>
     </>
   );

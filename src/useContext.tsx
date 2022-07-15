@@ -11,13 +11,14 @@ export const UserContext = React.createContext<null | any>(null);
 export const UserStorage = ({ children }: Props) => {
   const [data, setData] = React.useState<null | any>(null);
   const [isLogin, setIsLogin] = React.useState<boolean | null>(null);
-  const [error, setError] = React.useState<null | boolean>(null);
+  const [error, setError] = React.useState<null | string>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [pokemonsFav, setPokemonsFav] = React.useState<string[] | null>(null);
 
   const navigate = useNavigate();
 
   async function getUserForLogin(token: string) {
+    setError(null);
     try {
       const response = await GET_USER(token);
       if (response.status === 200) {
@@ -27,13 +28,13 @@ export const UserStorage = ({ children }: Props) => {
         return false;
       }
     } catch (err) {
-      setError(true);
+      setError('true');
       return false;
     }
   }
 
   async function getUser(token: string) {
-    setError(false);
+    setError(null);
     setLoading(true);
     try {
       const response = await GET_USER(token);
@@ -44,13 +45,14 @@ export const UserStorage = ({ children }: Props) => {
       }
       if (response.status === 204) {
         setData(null);
-        setError(true);
+        // localStorage.removeItem('token');
+        setError('Sessão expirada, faça login novamente.');
         navigate('/login');
       }
     } catch (err) {
       setIsLogin(false);
       setData(null);
-      setError(true);
+      setError('Erro no servidor');
     } finally {
       setLoading(false);
     }
@@ -63,7 +65,7 @@ export const UserStorage = ({ children }: Props) => {
     email: string,
   ) {
     setLoading(true);
-    setError(false);
+    setError(null);
     try {
       const response = await REGISTER_POST({
         username,
@@ -81,7 +83,7 @@ export const UserStorage = ({ children }: Props) => {
         return true;
       }
     } catch (err) {
-      setError(true);
+      setError('Falha ao se registrar.');
     } finally {
       setLoading(false);
     }
@@ -89,7 +91,7 @@ export const UserStorage = ({ children }: Props) => {
 
   async function login(username: string, password: string) {
     setLoading(true);
-    setError(false);
+    setError(null);
     try {
       const response = await LOGIN_POST({
         username,
@@ -103,8 +105,11 @@ export const UserStorage = ({ children }: Props) => {
         navigate('/conta');
         return true;
       }
-    } catch (err) {
-      setError(true);
+    } catch (err: any) {
+      if (err.response.status === 401) {
+        setError('Usuário ou senha invalidos.');
+        return false;
+      }
       return false;
     } finally {
       setLoading(false);
@@ -114,13 +119,13 @@ export const UserStorage = ({ children }: Props) => {
   function logout() {
     setData(null);
     setIsLogin(false);
-    setError(false);
+    setError(null);
     localStorage.removeItem('token');
     navigate('/');
   }
 
   async function getPokemonsUser() {
-    setError(false);
+    setError(null);
     try {
       const token = localStorage.getItem('token');
       if (token) {
@@ -134,7 +139,7 @@ export const UserStorage = ({ children }: Props) => {
         return userFav;
       }
     } catch (err) {
-      setError(true);
+      setError('Erro no servidor');
       return false;
     }
   }
@@ -156,6 +161,7 @@ export const UserStorage = ({ children }: Props) => {
         isLogin,
         register,
         error,
+        setError,
         login,
         loading,
         logout,
