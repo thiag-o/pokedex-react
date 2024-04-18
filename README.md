@@ -4,7 +4,7 @@ O Pokedéx React é uma plataforma onde você pode procurar por algum pokemon e 
 
 A consulta é através da api https://pokeapi.co.
 
-Foi elaborado junto ao projeto [Pokedex Server](https://github.com/thiag-o/pokedex-server) que gerencia a parte de cadastro do usuário e favoritos.
+Foi elaborado junto ao projeto [Pokedex Server](https://github.com/thiag-o/pokedex-server) que gerencia a parte de cadastro e favoritos do usuário.
 
 <img src=".github/pokedex-react.png" alt="pokedex react"/>
 
