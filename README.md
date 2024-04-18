@@ -2,9 +2,15 @@
 
 O Pokedéx React é uma plataforma onde você pode procurar por algum pokemon e criar sua conta para salvar seus pokemons favoritos.
 
+A consulta é através da api https://pokeapi.co.
+
+Foi elaborado junto ao projeto [Pokedex Server](https://github.com/thiag-o/pokedex-server) que gerencia a parte de cadastro do usuário e favoritos.
+
 <img src=".github/pokedex-react.png" alt="pokedex react"/>
 
 Para visualizar os pokemons clique aqui: [Pokedex React](pokedex-react-tau.vercel.app)
+
+<h6>** O projeto publicado está sem as funcionalidades de usuário **</h6>
 
 ### Features
 
@@ -12,7 +18,11 @@ Para visualizar os pokemons clique aqui: [Pokedex React](pokedex-react-tau.verce
 - [x] Criação de conta de usuário
 - [x] Salvar e remover pokemons dos favoritos (precisa estar logado)
 
-### Instalação
+### Pokedex API
+
+A Api do projeto está disponível no repositório https://github.com/thiag-o/pokedex-server
+
+## Instalação
 
 <table>
     <tr>
@@ -31,13 +41,15 @@ Para visualizar os pokemons clique aqui: [Pokedex React](pokedex-react-tau.verce
 
 1. Faça um clone do projeto em sua máquina: `git clone https://github.com/thiag-o/paraiso-aframe.git`
 2. Abra o diretório raíz do projeto `cd pokedex-react`
-3. Rode o comando `yarn` para instalar as dependências e `yarn build` para efetuar a build
-4. Agora para iniciar o projeto é só rodar `yarn preview` e clicar aqui: [http://localhost:4173](http://localhost:4173)
+3. Crie um arquivo `.env` na raíz e adicione o valor para a variável que irá linkar a API conforme o exemplo: `API_URL=http://localhost:3333`
+4. Rode o comando `yarn` para instalar as dependências
+5. Rode o comando `yarn build` para efetuar a build
+6. Agora para iniciar o projeto é só rodar `yarn preview` e clicar aqui: [http://localhost:4173](http://localhost:4173)
 
-### Tecnologias
+## Tecnologias
 
 [![My Skills](https://skillicons.dev/icons?i=html,css,ts)](https://skillicons.dev)
 
-### Licença
+## Licença
 
 [MIT](https://choosealicense.com/licenses/mit/)
