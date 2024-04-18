@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <p>
-        Created by Thiago Borges © 2022{' '}
-        <a href="https://github.com/thiagodevss" target="_blank">
+        Created by Thiago Borges Mansano © 2022{' '}
+        <a href="https://github.com/thiag-o" target="_blank">
           {' '}
-          github/thiagodevss
+          github/thiag-o
         </a>
       </p>
     </footer>
