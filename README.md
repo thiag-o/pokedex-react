@@ -1,6 +1,6 @@
 # Pokedex React
 
-O Pokedéx React é uma plataforma onde você pode procurar por algum pokemon e criar sua conta para salvar seus pokemons favoritos.
+O Pokedéx React é uma plataforma onde você pode procurar por pokemons, visualizar seus elementos e suas evoluções e também salvá-los aos favoritos.
 
 A consulta é através da api https://pokeapi.co.
 
