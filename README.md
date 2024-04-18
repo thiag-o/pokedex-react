@@ -39,7 +39,7 @@ A Api do projeto está disponível no repositório https://github.com/thiag-o/po
     </tr>
 </table>
 
-1. Faça um clone do projeto em sua máquina: `git clone https://github.com/thiag-o/paraiso-aframe.git`
+1. Faça um clone do projeto em sua máquina: `git clone https://github.com/thiag-o/pokedex-react.git`
 2. Abra o diretório raíz do projeto `cd pokedex-react`
 3. Crie um arquivo `.env` na raíz e adicione o valor para a variável que irá linkar a API conforme o exemplo: `API_URL=http://localhost:3333`
 4. Rode o comando `yarn` para instalar as dependências
