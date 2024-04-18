@@ -10,7 +10,7 @@ Foi elaborado junto ao projeto [Pokedex Server](https://github.com/thiag-o/poked
 
 Para visualizar os pokemons clique aqui: [Pokedex React](https://pokedex-react-tau.vercel.app/)
 
-<h6>** O projeto publicado está sem as funcionalidades de usuário e criação de conta, pois a API não está publicada **</h6>
+<h6>** O projeto publicado está sem as funcionalidades de usuário e cadastro, pois a API não está publicada **</h6>
 
 ### Features
 
