@@ -1,6 +1,6 @@
 # Pokedex React
 
-O Pokedéx React é uma plataforma onde você pode procurar por pokemons, visualizar os elementos e as evoluções e também salvar seus pokemons preferidos.
+O Pokedéx React é uma plataforma onde você pode procurar por Pokemons, visualizar os elementos e as evoluções e também salvar seus Pokemons preferidos.
 
 A consulta é através da api https://pokeapi.co.
 
@@ -8,15 +8,15 @@ Foi elaborado junto ao projeto [Pokedex Server](https://github.com/thiag-o/poked
 
 <img src=".github/pokedex-react.png" alt="pokedex react"/>
 
-Para visualizar os pokemons clique aqui: [Pokedex React](https://pokedex-react-tau.vercel.app/)
+Para visualizar os Pokemons clique aqui: [Pokedex React](https://pokedex-react-tau.vercel.app/)
 
 <h6>** O projeto publicado está sem as funcionalidades de usuário e cadastro, pois a API não está publicada **</h6>
 
 ### Features
 
-- [x] Listagem e filtro de pokemons
+- [x] Listagem e filtro de Pokemons
 - [x] Criação de conta de usuário
-- [x] Salvar e remover pokemons dos favoritos (precisa estar logado)
+- [x] Salvar e remover Pokemons dos favoritos (precisa estar logado)
 
 ### Pokedex API
 
